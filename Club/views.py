@@ -23,11 +23,20 @@ def getmeetings(request):
     return render(request, 'club/meetings.html' , {'meeting_list' : meeting_list})
 
 def meetingdetails(request, id):
-    meet=get_object_or_404(Meeting, pk=id)
+    meet=get_object_or_404(Meeting, pk=id) 
+    #mmin=Minutes.objects.filter(Meeting, pk=id)
     context={
         'meet' : meet,
+        #'mmin' : mmin,
     }
     return render(request, 'Club/meetingdetails.html', context=context)
+
+def meetingminutes(request, id):
+    mmin=get_object_or_404(Meeting, pk=id)
+    context={
+        'mmin' : mmin,
+    }
+    return render(request, 'Club/meetingminutes.html', context=context)
 
 def loginmessage(request):
     return render(request, 'club/loginmessage.html')

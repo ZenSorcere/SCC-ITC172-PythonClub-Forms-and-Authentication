@@ -33,7 +33,7 @@ class Resource(models.Model):
     resourcename=models.CharField(max_length=255)
     resourcetype=models.CharField(max_length=255, null=True, blank=True)
     resourceurl=models.URLField(null=True, blank=True)
-    dateentered=models.DateField()
+    dateentered=models.DateField(null=True, blank=True)
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
     resourcedesc=models.TextField()
 

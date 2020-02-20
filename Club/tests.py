@@ -72,10 +72,10 @@ class GetEvents(TestCase):
 class New_Resource_authentication_test(TestCase):
     def setUp(self):
         self.test_user=User.objects.create_user(username='testuser1', password='P@ssw0rd1')
-        self.name=Resource.objects.create (resourcename='redline')
-        self.type=Resource.objects.create(resourcetype='stapler')
-        self.date=Resource.objects.create (dateentered ='2019-04-02')
-        self.prod = Resource.objects.create(resourcename=self.name, resourcetype=self.type, user=self.test_user, dateentered=self.date,resourceurl= 'http://www.officedepo.com', resourcedesc="Important office tool")
+        self.name='redline'
+        self.type='stapler'
+        self.date='2019-04-02'
+        self.prod = Resource.objects.create(resourcename=self.name, resourcetype=self.type, dateentered=self.date, user=self.test_user, resourceurl= 'http://www.officedepo.com', resourcedesc="Important office tool")
         return self.setUp
 
     def test_redirect_if_not_logged_in(self):

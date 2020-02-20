@@ -15,6 +15,7 @@
        <td>{{ m.mtgdate }}</td>
        <td>{{ m.mtgtime }}</td>
        <td>{{ m.mtglocation }}</td>
+       <td><a href="{% url 'meetingminutes' id=m.id %}">minutes</a></td>
    </tr>
 
  {% endfor %}
